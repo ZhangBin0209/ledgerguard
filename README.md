@@ -1,5 +1,7 @@
 # LedgerGuard
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22854960.svg)](https://doi.org/10.5281/zenodo.22854960)
+
 Tamper evidence for append-only structured records, with blockchain anchoring
 and auditor-facing verification.
 
@@ -177,6 +179,12 @@ degraded evidence.
 School of Digital Intelligence Finance & Business (数智财商学院)  
 Anhui Technical College of Industry and Economy (安徽工业经济职业技术学院)  
 Email: zhangbin_0209@126.com
+
+## Citation
+
+If you use LedgerGuard in your research, please cite the software using its
+Zenodo DOI: [10.5281/zenodo.22854960](https://doi.org/10.5281/zenodo.22854960).
+Machine-readable citation metadata is available in [`CITATION.cff`](CITATION.cff).
 
 ## Licence
 
