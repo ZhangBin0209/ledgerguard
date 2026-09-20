@@ -155,8 +155,8 @@ Docker is optional. The repository includes a `Dockerfile` and `.dockerignore` f
 Current repository:
 
 ```bash
-git clone https://github.com/ZhangBin0209/ledgerguard0209.git
-cd ledgerguard0209
+git clone https://github.com/ZhangBin0209/ledgerguard.git
+cd ledgerguard
 ```
 
 ### 3.2 Install the Core Package
@@ -1287,8 +1287,8 @@ Then run the suite again. A skip is not equivalent to a failure, but the reason 
 
 ### 11.1 Repository
 
-- **Repository:** https://github.com/ZhangBin0209/ledgerguard0209
-- **Issue tracker:** https://github.com/ZhangBin0209/ledgerguard0209/issues
+- **Repository:** https://github.com/ZhangBin0209/ledgerguard
+- **Issue tracker:** https://github.com/ZhangBin0209/ledgerguard/issues
 
 ### 11.2 Version
 
