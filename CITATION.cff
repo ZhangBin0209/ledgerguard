@@ -6,6 +6,8 @@ abstract: >-
   append-only record systems, with accounting and research-provenance
   profiles and a reproducible benchmark for integrity research.
 version: 0.6.13
+doi: "10.5281/zenodo.22854960"
+repository-code: "https://github.com/ZhangBin0209/ledgerguard"
 license: MIT
 type: software
 authors:
