@@ -362,8 +362,12 @@ class FileBackend(ChainBackend):
             reference=f"{self.path.name}:{len(existing)}",
             anchored_at=datetime.now(timezone.utc),
         )
-        with self.path.open("a", encoding="utf-8") as handle:
-            handle.write(json.dumps(record.to_dict(), sort_keys=True) + "\n")
+        # Binary append with an explicit LF: text mode would translate "\n"
+        # to "\r\n" on Windows, making the on-disk format OS-dependent (and
+        # breaking the append-only tail contract the readers rely on). Writing
+        # bytes keeps the store byte-identical across platforms.
+        with self.path.open("ab") as handle:
+            handle.write(json.dumps(record.to_dict(), sort_keys=True).encode("utf-8") + b"\n")
             handle.flush()
             os.fsync(handle.fileno())
         return record
