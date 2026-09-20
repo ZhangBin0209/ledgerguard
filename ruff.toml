@@ -1,0 +1,24 @@
+# Linting configuration. The selected rules are the ones that catch real
+# defects; the ones deselected below are style opinions that would only add
+# churn to a codebase this size.
+target-version = "py310"
+line-length = 88
+
+[lint]
+select = ["E", "F", "W", "I", "B", "UP", "RUF", "DTZ", "SIM", "C4"]
+ignore = [
+    "E501",     # line length is enforced by formatting, not by errors
+    "UP035",    # typing.Mapping etc. still read better here than collections.abc
+    "RUF012",   # mutable class attributes are deliberate in the registry
+    "RUF005",   # explicit concatenation is clearer than unpacking here
+    "RUF007",   # pairwise is used where it helps; elsewhere zip reads better
+    "SIM105",   # the try/except documents why the failure is tolerable
+    "RUF043",   # regex metacharacters in test match= are intentional
+    "RUF022",   # __all__ is grouped by layer, which is more useful than sorted
+]
+
+[lint.per-file-ignores]
+# Tests deliberately unpack fixtures they do not always use, and assert on
+# construction failures that ruff reads as unused expressions.
+"tests/*" = ["RUF059", "B017", "F841", "DTZ001"]
+"scripts/*" = ["B023"]

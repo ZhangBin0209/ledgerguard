@@ -1,0 +1,213 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "batchId",
+          "type": "string"
+        }
+      ],
+      "name": "AlreadyAnchored",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "EmptyBatchId",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "length",
+          "type": "uint256"
+        }
+      ],
+      "name": "IndexOutOfRange",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "batchId",
+          "type": "string"
+        }
+      ],
+      "name": "UnknownBatch",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ZeroDigest",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "batchKey",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "batchId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "digest",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "Anchored",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "batchId",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "digest",
+          "type": "bytes32"
+        }
+      ],
+      "name": "anchor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "at",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "batchKey",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "digest",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "blockNumber",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "timestamp",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "count",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "batchId",
+          "type": "string"
+        }
+      ],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "digest",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "blockNumber",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "timestamp",
+          "type": "uint64"
+        },
+        {
+          "internalType": "address",
+          "name": "submitter",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "batchId",
+          "type": "string"
+        }
+      ],
+      "name": "isAnchored",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061063a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306661abd1461005c578063693ec85e14610072578063a7e6ef30146100bf578063dbe5174e146100e2578063e0886f90146100f7575b600080fd5b6001546040519081526020015b60405180910390f35b6100856100803660046104aa565b61013a565b604051610069949392919093845267ffffffffffffffff9283166020850152911660408301526001600160a01b0316606082015260800190565b6100d26100cd3660046104aa565b6101d8565b6040519015158152602001610069565b6100f56100f03660046104ec565b610216565b005b61010a610105366004610538565b6103cb565b60408051948552602085019390935267ffffffffffffffff91821692840192909252166060820152608001610069565b60008060008060008060008888604051610155929190610551565b60408051918290039091208252602082019290925201600020805490915061019d578686604051639bb8a8eb60e01b815260040161019492919061058a565b60405180910390fd5b80546001820154600290920154909867ffffffffffffffff8084169950600160401b90930490921696506001600160a01b0316945092505050565b60008060001b60008085856040516101f1929190610551565b6040518091039020815260200190815260200160002060000154141590505b92915050565b600082900361023857604051631081e63160e11b815260040160405180910390fd5b806102565760405163506f3a1b60e01b815260040160405180910390fd5b60008383604051610268929190610551565b6040805191829003909120600081815260208190529190912054909150156102a7578383604051639210583560e01b815260040161019492919061058a565b6040805160808101825283815267ffffffffffffffff438116602080840191825242831684860190815233606086019081526000888152928390529582209451855591516001808601805494518616600160401b026fffffffffffffffffffffffffffffffff199095169290951691909117929092179092559251600290920180546001600160a01b03939093166001600160a01b03199093169290921790915581548083018355908290527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601829055805482917f8acb993cce42d6716fa3c672be932e9e1e1047d25d3793c60024daef27e295a5918791879187916103ad916105a6565b6040516103bd94939291906105c7565b60405180910390a250505050565b6000806000806001805490508510610404576001546040516394666f0d60e01b8152610194918791600401918252602082015260400190565b600060018681548110610419576104196105ee565b60009182526020808320909101548083529082905260409091208054600190910154919650945067ffffffffffffffff8082169450600160401b909104169150509193509193565b60008083601f84011261047357600080fd5b50813567ffffffffffffffff81111561048b57600080fd5b6020830191508360208285010111156104a357600080fd5b9250929050565b600080602083850312156104bd57600080fd5b823567ffffffffffffffff8111156104d457600080fd5b6104e085828601610461565b90969095509350505050565b60008060006040848603121561050157600080fd5b833567ffffffffffffffff81111561051857600080fd5b61052486828701610461565b909790965060209590950135949350505050565b60006020828403121561054a57600080fd5b5035919050565b8183823760009101908152919050565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b60208152600061059e602083018486610561565b949350505050565b8181038181111561021057634e487b7160e01b600052601160045260246000fd5b6060815260006105db606083018688610561565b6020830194909452506040015292915050565b634e487b7160e01b600052603260045260246000fdfea26469706673582212208e9b374a4994d61dc6db872767fc09ceaf99b60ae3dfdd6a947dc7df96ca25ad64736f6c63430008180033",
+  "compiler": {
+    "evmVersion": "paris",
+    "name": "solc",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.24+commit.e11b9ed9.Linux.g++"
+  },
+  "contractName": "AnchorRegistry",
+  "source": "contracts/AnchorRegistry.sol"
+}

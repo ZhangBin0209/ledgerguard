@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ledgerguard"
+version = "0.6.13"
+description = "Tamper evidence and audit verification for append-only structured records"
+authors = [{ name = "Zhang Bin", email = "zhangbin_0209@126.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["tamper evidence", "merkle tree", "audit", "blockchain anchoring", "provenance"]
+dependencies = []
+
+[project.scripts]
+ledgerguard = "ledgerguard.cli:main"
+
+[project.optional-dependencies]
+evm = ["web3>=7.0"]
+# eth-tester only ever publishes pre-releases, so the constraint must admit
+# them explicitly; a bare ">=" resolves to nothing on a clean install.
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "web3>=7.0",
+    "eth-tester[py-evm]>=0.12.0b1",
+    "matplotlib>=3.7",
+]
+
+[tool.hatch.build.targets.wheel]
+# The artifacts directory lives inside the package, so the package glob
+# already ships it.  A force-include here added the same file a second time,
+# which hatchling rejects -- breaking every non-editable install while the
+# editable installs used everywhere in CI sailed through (found by external
+# audit of 0.6.3).  The CI package job now builds a real wheel to keep this
+# path honest.
+packages = ["src/ledgerguard"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

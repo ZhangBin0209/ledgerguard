@@ -1,0 +1,14 @@
+# The Dockerfile copies named paths, so nothing here changes what ends
+# up in the image; this only stops the build context from carrying the
+# repository history and tool caches to the daemon on every build.
+.git
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.coverage
+results
+docs
+dist
+*.egg-info

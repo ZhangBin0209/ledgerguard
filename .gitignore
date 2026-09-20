@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+ledger.json
+tampered.json
+anchors.jsonl
+witnesses.json
+.mypy_cache/
+.ruff_cache/
+results_local/

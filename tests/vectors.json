@@ -1,0 +1,64 @@
+{
+  "_comment": "Frozen outputs of the canonical encoding and the Merkle construction. These pin the wire format: any change to canonicalisation, field ordering, type tags, domain separation or tree shape will alter them, which is the point. A mismatch means previously anchored ledgers can no longer be verified and requires a schema version bump, never an update of this file.",
+  "canonical_preimages_sha256": {
+    "accounting.journal_entry@1": "0eab9c3692cf8f5c3b8c5064135d3b30c7cf29410a7243bc3ec7a69bcce11ab7",
+    "vectors.all_types@1": "1f028185d8604b7d2c2769a68a413039be7bb58fc6d0df8af4925edd4141d9af"
+  },
+  "commitment": {
+    "batch_id": "VEC-0001",
+    "digest": "9dafcd21233671b19915162e2fd02320f1501e526fb355bcd3aa72e26aa2453a",
+    "interval": [
+      1,
+      16,
+      16
+    ],
+    "root": "dce24e5242f5531350d31d14b5b25f0517d91117764df50f3beca63d4ee57e7a",
+    "tree_size": 16
+  },
+  "commitment_non_genesis": {
+    "_comment": "A batch whose predecessor is not the genesis digest. The genesis vector above cannot detect a change to how the predecessor is encoded, because dropping it entirely produces identical bytes there.",
+    "batch_id": "VEC-0002",
+    "digest": "1a31bbe9b54861d750eb62adca3609618415d639ff50feae5059aff73d0a2fa2",
+    "prev_digest": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "root": "dce24e5242f5531350d31d14b5b25f0517d91117764df50f3beca63d4ee57e7a"
+  },
+  "format_version": 1,
+  "inclusion_proof_index_5": {
+    "leaf_digest": "107d405dd1833412110d5eace12177ccbe007a0c6c852ddde0167c82a57ad828",
+    "path": [
+      "edfd483ee4562dbb16d7e48f8adb575488a93144efd5eb7e949b57b5f3787df2",
+      "1ab7868c955bb4e80494e3b6ad5020f28b0929b7bf59731a5b73bfaec5577cf5",
+      "8dbbb78f5bce682311d17e68040b1bb64319a1e995063c493ae43a93306f0161",
+      "6233a445ba9ffa2d0f79dab2976feb2101731d3c37b45ddbb55167e418efe54f"
+    ]
+  },
+  "merkle": {
+    "empty_root": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "leaf_hash_of_zero_digest": "7f9c9e31ac8256ca2f258583df262dbc7d6f68f2a03043d5c99a4ae5a7396ce9",
+    "node_hash_of_two_zero_digests": "a7b6a88afe611b23a8bb9836e3cd13ba706cb05d6de647d92bf05bb0aace72ee",
+    "roots_by_size": {
+      "1": "3f16c0c2cd28088814f15c300b46158e83203cde690169a74602ca926fa2a8bc",
+      "100": "3b736d2808e83d145d0721a7af5a8c259c90a0bda790d8e361ae50deb2746d13",
+      "13": "cc79ebf24217a6c5cf6c1c87b2b51c22f7331ddc01bedf767a818a3f3c19d424",
+      "2": "d3b4dcb90fabca433a71833cdc3f15c8827a424cf3f138675bccd1fca5b5bc76",
+      "3": "17b728310cebcc8bacd012024a708aa1a537ee01a4ce8881d2a803ebb3156d05",
+      "5": "2547bc21863a7989f484cf2be15bf376a8a726f31381ebece03a8431603f5a5d",
+      "8": "c94e876e476d5257af7de8633699075cae82e4cfeea7844b363651c79e9ff523"
+    }
+  },
+  "record_digests": {
+    "accounting.journal_entry@1": "0eab9c3692cf8f5c3b8c5064135d3b30c7cf29410a7243bc3ec7a69bcce11ab7",
+    "provenance.instrument_event@1": "b4e4d96be5e6c3a61884384d113c101bd5b7bff79813c368fc1b1842dc8ce449",
+    "vectors.all_types@1": "1f028185d8604b7d2c2769a68a413039be7bb58fc6d0df8af4925edd4141d9af"
+  },
+  "synthetic_ledgers": {
+    "accounting_seed99_25vouchers": {
+      "count": 50,
+      "digest_of_digests": "76d83121204a8222b1eadb6c2390238992f5ecb0106378933d5e507739e15439"
+    },
+    "provenance_seed99_12runs": {
+      "count": 86,
+      "digest_of_digests": "2fc8da3bd3b45d4539cd30d436d4e2fb845fd37360138aca7febaa4501e0d375"
+    }
+  }
+}
